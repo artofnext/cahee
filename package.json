@@ -1,0 +1,27 @@
+{
+  "name": "cahee",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/artofnext/cahee.git"
+  },
+  "keywords": [
+    "cahee"
+  ],
+  "author": "artofnext",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/artofnext/cahee/issues"
+  },
+  "homepage": "https://github.com/artofnext/cahee#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}
