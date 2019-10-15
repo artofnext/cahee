@@ -14,10 +14,36 @@
 </head>
 
 <body>
-  <header>
-<h1>
-  Main Text
-</h1>
+  <header class="header">
+    <div class="container">
+      <div class="flex-centered">
+        <div class="logo">
+          <p class="logo__text">Cahee</p>
+        </div>
+        <nav class="nav">
+          <input class="burger" type="checkbox" name="burger" id="burger">
+          <label for="burger">
+            <svg class="burger__img">
+                <use xlink:href="img/icon_sprite.svg#icon_burger" />
+            </svg>
+            <svg class="close__img">
+                <use xlink:href="img/icon_sprite.svg#icon_close" />
+            </svg>
+          </label>
+          
+          <ul class="nav__list">
+            <li class="nav__item"><a href="#">home</a></li>
+            <li class="nav__item"><a href="#">about</a></li>
+            <li class="nav__item"><a href="#">services</a></li>
+            <li class="nav__item"><a href="#">gallery</a></li>
+            <li class="nav__item"><a href="#">blog</a></li>
+            <li class="nav__item"><a href="#">contact</a></li>
+          </ul>
+        </nav>
+      </div>
+
+    </div>
+
   </header>
   <main>
   </main>

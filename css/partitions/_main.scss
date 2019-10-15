@@ -64,9 +64,43 @@
 
 body {
     background-color: $color_section1;
-    font-family: pacifico;
+    font-family: raleway;
     
 
 
 
+}
+
+.logo__text {
+    font-family: pacifico;
+}
+
+.burger__img, .close__img {
+    fill: #000;
+    // stroke: #000;
+    stroke-linejoin: round;
+    // stroke-width: 2px;
+    height: 42px;
+
+  }
+
+.burger[type="checkbox"] {
+    display: none;
+}
+
+.nav__list {
+    display: none;
+}
+
+.burger:checked ~ label .burger__img {
+        display: none;
+    }
+
+.burger:checked ~ .nav__list {
+        display: initial;
+    }
+
+
+.burger:not(:checked) + label .close__img {
+    display: none;
 }

@@ -2,8 +2,9 @@ const { series, parallel } = require('gulp');
 let gulp = require('gulp');
 let sass = require('gulp-sass');
 let minify = require('gulp-minify');
-let cleanCSS = require('gulp-clean-css');
 let sourcemaps = require('gulp-sourcemaps');
+
+let cleanCSS = require('gulp-clean-css');
 
 
 function compile() {
