@@ -3,7 +3,7 @@ let gulp = require('gulp');
 let sass = require('gulp-sass');
 let minify = require('gulp-minify');
 let cleanCSS = require('gulp-clean-css');
-var sourcemaps = require('gulp-sourcemaps');
+let sourcemaps = require('gulp-sourcemaps');
 
 
 function compile() {
@@ -35,7 +35,7 @@ function minifyJS() {
 }
 
 function watch() {
-    return gulp.watch('./css/*.scss', compile);
+    return gulp.watch('./css/**/*.scss', compile);
 };
 
 exports.default = function() {
