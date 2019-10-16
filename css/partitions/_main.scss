@@ -62,17 +62,31 @@
 
 }
 
+a {
+    text-decoration: none;  
+    color: black;
+}
+
 body {
     background-color: $color_section1;
-    font-family: raleway;
-    
+    font-family: raleway, Arial, Helvetica, sans-serif;
+}
 
+.container {
+    // margin: 0 2%;
+    width: 96%;
+}
 
-
+.header {
+    // margin: 10px 0;
+    position: absolute;
+    width: 100%;
 }
 
 .logo__text {
     font-family: pacifico;
+    font-size: 50px;
+    margin: 0;
 }
 
 .burger__img, .close__img {
@@ -81,8 +95,8 @@ body {
     stroke-linejoin: round;
     // stroke-width: 2px;
     height: 42px;
-
-  }
+    width: 42px;
+}
 
 .burger[type="checkbox"] {
     display: none;
@@ -90,17 +104,215 @@ body {
 
 .nav__list {
     display: none;
+    padding: 0;
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: $header-height-mobile;
+    width: 100%;
+}
+
+.nav__item {
+    text-align: center;
+    // border: 1px solid $color_menu_active;
+    background-color: wheat;
+    margin: 2px 0;
+    
+    &:hover {
+        background-color: $color_section1;
+    }
+
+    a {
+        display: block;
+        padding: 5px 0;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-weight: 600;
+    }
+}
+
+.flex-centered {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
 }
 
 .burger:checked ~ label .burger__img {
-        display: none;
-    }
+    display: none;
+}
 
 .burger:checked ~ .nav__list {
-        display: initial;
-    }
+    display: initial;
+}
 
 
 .burger:not(:checked) + label .close__img {
     display: none;
 }
+
+.fresh {
+    // width: 100%;
+    position: relative;
+    // top: 0;
+    // left: 0;
+    z-index: -1;
+}
+
+.fresh__img {
+    // width: 100vw;
+    // position: absolute;
+    
+    min-height: 490px;
+    display: block;
+    object-fit: cover;
+    object-position: left;
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+    // height: inherit;
+
+}
+
+.fresh__container {
+    position: absolute;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+
+
+.fresh__title {
+    // margin-top: 50px;
+}
+
+.title {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.text {
+    font-size: 17px;
+    font-weight: 300;
+    margin: 30px 0;
+    line-height: 1.5;
+}
+
+.fresh__scroll {
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    display: none;
+}
+
+.center {
+    // display: flex;
+    // justify-content: center;
+}
+
+.button {
+    width: 200px;
+    height: 55px;
+    border: none;
+    color: white;
+
+    &:hover {box-shadow: 1px 1px 2px black;}
+}
+
+.fresh__button {
+    background-color: $color_button_orange;
+}
+
+.fresh__block {
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+}
+
+@include respond-to ('small') {
+
+    .fresh {
+        // margin: 200px 0 0 0;
+    }
+
+
+    
+    .header {
+        height: $header-height - 38px;
+        display: flex;
+        align-content: center;
+        padding-top: 38px;
+    }
+
+    .container {
+        max-width: 760px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .nav {
+        flex-grow: 5;
+        display: flex;
+        width: initial;
+        justify-content: space-between;
+        align-content: center;
+        flex-wrap: nowrap;
+    }
+
+    .nav__list {
+        position: initial;
+        display: flex;
+        justify-content: space-between;
+        width: 70%;
+        position: initial;
+    }
+
+    .burger__img {
+        display: none;
+    }
+
+    .nav__item {
+        padding: 0 5px;
+        border-top: 3px solid transparent;
+        background: none;
+        margin: 0;
+        &:hover {
+            border-top: 3px solid $color_menu_active;
+        }
+    }
+
+    .fresh__block {
+        width: 40%;
+    }
+
+    .fresh__img {
+        opacity: initial;
+    }
+
+    .fresh__scroll {
+        display: initial;
+    }
+
+    .fresh__block {
+        text-align: left;
+    }
+}
+
+@include respond-to ('large') {
+    .container {
+        // margin: 0 10%;
+        // width: 80%;
+        max-width: 1150px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+
