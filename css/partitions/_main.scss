@@ -1,8 +1,8 @@
 
 @font-face {
     font-family: 'pacifico';
-    src: url('pacifico-regular-webfont.woff2') format('woff2'),
-         url('pacifico-regular-webfont.woff') format('woff');
+    src: url('../fonts/pacifico-regular-webfont.woff2') format('woff2'),
+         url('../fonts/pacifico-regular-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -10,8 +10,8 @@
 
 @font-face {
     font-family: 'raleway';
-    src: url('raleway-black-webfont.woff2') format('woff2'),
-         url('raleway-black-webfont.woff') format('woff');
+    src: url('../fonts/raleway-black-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-black-webfont.woff') format('woff');
     font-weight: 700;
     font-style: normal;
 
@@ -19,8 +19,8 @@
 
 @font-face {
     font-family: 'raleway';
-    src: url('raleway-bold-webfont.woff2') format('woff2'),
-         url('raleway-bold-webfont.woff') format('woff');
+    src: url('../fonts/raleway-bold-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-bold-webfont.woff') format('woff');
     font-weight: 600;
     font-style: normal;
 
@@ -28,8 +28,8 @@
 
 @font-face {
     font-family: 'raleway';
-    src: url('raleway-italic-webfont.woff2') format('woff2'),
-         url('raleway-italic-webfont.woff') format('woff');
+    src: url('../fonts/raleway-italic-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: italic;
 
@@ -37,8 +37,8 @@
 
 @font-face {
     font-family: 'raleway';
-    src: url('raleway-light-webfont.woff2') format('woff2'),
-         url('raleway-light-webfont.woff') format('woff');
+    src: url('../fonts/raleway-light-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-light-webfont.woff') format('woff');
     font-weight: 300;
     font-style: normal;
 
@@ -46,8 +46,8 @@
 
 @font-face {
     font-family: 'raleway';
-    src: url('raleway-regular-webfont.woff2') format('woff2'),
-         url('raleway-regular-webfont.woff') format('woff');
+    src: url('../fonts/raleway-regular-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-regular-webfont.woff') format('woff');
     font-weight: 400;
     font-style: normal;
 
@@ -55,8 +55,8 @@
 
 @font-face {
     font-family: 'raleway';
-    src: url('raleway-thin-webfont.woff2') format('woff2'),
-         url('raleway-thin-webfont.woff') format('woff');
+    src: url('../fonts/raleway-thin-webfont.woff2') format('woff2'),
+         url('../fonts/raleway-thin-webfont.woff') format('woff');
     font-weight: 100;
     font-style: normal;
 
@@ -72,9 +72,14 @@ body {
     font-family: raleway, Arial, Helvetica, sans-serif;
 }
 
+
+h2 {
+    margin: 0;
+}
+
 .container {
     // margin: 0 2%;
-    width: 96%;
+    // width: 96%;
 }
 
 .header {
@@ -96,6 +101,7 @@ body {
     // stroke-width: 2px;
     height: 42px;
     width: 42px;
+    padding: 8px 0;
 }
 
 .burger[type="checkbox"] {
@@ -110,16 +116,26 @@ body {
     left: 0;
     top: $header-height-mobile;
     width: 100%;
+    background-color: $color_menu_active;
+    box-shadow: 0 0 5px black;
+    // filter: blur(8px);
 }
 
 .nav__item {
     text-align: center;
     // border: 1px solid $color_menu_active;
-    background-color: wheat;
+    background-color: white;
+    // filter: blur(8px);
     margin: 2px 0;
     
     &:hover {
-        background-color: $color_section1;
+        background-color: $color_menu_active;
+        // box-shadow: 5px 0 3px black;
+
+        & a {
+            color: white;
+            font-weight: 700;
+        }
     }
 
     a {
@@ -143,6 +159,7 @@ body {
 
 .burger:checked ~ .nav__list {
     display: initial;
+
 }
 
 
@@ -156,6 +173,7 @@ body {
     // top: 0;
     // left: 0;
     z-index: -1;
+    max-height: 1000px;
 }
 
 .fresh__img {
@@ -163,6 +181,7 @@ body {
     // position: absolute;
     
     min-height: 490px;
+    max-height: 1000px;
     display: block;
     object-fit: cover;
     object-position: left;
@@ -200,9 +219,15 @@ body {
     line-height: 1.5;
 }
 
+.fresh__text {
+    text-shadow: white 1px 0 5px,
+    white 1px 0 5px,
+    white 1px 0 5px;
+}
+
 .fresh__scroll {
     position: absolute;
-    bottom: 5%;
+    bottom: 14%;
     left: 50%;
     transform: translate(-50%,-50%);
     display: none;
@@ -230,8 +255,34 @@ body {
     text-align: center;
 }
 
-h2 {
-    margin: 0;
+.about {
+    // background: $color_section2  url('../img/img_cup.png') no-repeat center;
+    background-color: $color_section2;
+    // background-image: url('../img/img_cup.png');
+    // background-repeat: no-repeat;
+    // background-position: 50% 0;
+    // background-size: contain;
+    // border: 1px solid red;
+    // height: 800px;
+    // background-image: url("../img/img_cup.png");
+
+}
+
+.about__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.about__title {
+    color: white;
+    font-size: 90px;
+}
+
+.about__text {
+    color: white;
 }
 
 @include respond-to ('small') {
@@ -250,8 +301,8 @@ h2 {
     }
 
     .container {
-        max-width: 760px;
-        width: 100%;
+        max-width: 860px;
+        width: 96%;
         margin-left: auto;
         margin-right: auto;
     }
@@ -271,6 +322,8 @@ h2 {
         justify-content: space-between;
         width: 70%;
         position: initial;
+        background: none;
+        box-shadow: none;
     }
 
     .burger__img {
@@ -284,6 +337,12 @@ h2 {
         margin: 0;
         &:hover {
             border-top: 3px solid $color_menu_active;
+            background: none;
+
+            & a {
+                color: initial;
+                font-weight: 700;
+            }
         }
     }
 
@@ -302,6 +361,40 @@ h2 {
     .fresh__block {
         text-align: left;
     }
+
+    .about {
+        // background: $color_section2  url('../img/img_cup.png') no-repeat left;
+        // background-position: initial;
+        // background-size: 600px;
+    }
+
+    .about__container {
+        flex-direction: row;
+        padding: 50px 0;
+        
+    }
+
+    .cup-img {
+        // object-fit: contain;
+        max-width: 400px;
+    }
+
+    .about__img {
+        flex-shrink: 2;
+        margin-left: -5%;
+    }
+
+    .about__content {
+        padding-left: 20px;
+        text-align: left;
+    }
+
+    .about__title {
+        // color: white;
+        font-size: 60px;
+    }
+
+
 }
 
 @include respond-to ('large') {
@@ -312,6 +405,24 @@ h2 {
         width: 100%;
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .about__img {
+        // flex-shrink: 2;
+        margin-left: -5%;
+    }
+
+    .cup-img {
+        // object-fit: contain;
+        max-width: 600px;
+    }
+
+    .about__content {
+        padding-left: 100px;
+    }
+
+    .about__title {
+        font-size: 90px;
     }
 }
 
