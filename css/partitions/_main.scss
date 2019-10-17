@@ -167,6 +167,9 @@ h2 {
     display: none;
 }
 
+
+// TODO fix white space after Fresh section
+
 .fresh {
     // width: 100%;
     position: relative;
@@ -244,7 +247,7 @@ h2 {
     border: none;
     color: white;
 
-    &:hover {box-shadow: 1px 1px 2px black;}
+    &:hover {box-shadow: 3px 3px 10px black;}
 }
 
 .fresh__button {
@@ -276,13 +279,86 @@ h2 {
     text-align: center;
 }
 
-.about__title {
+.about__title, .services__title {
     color: white;
     font-size: 90px;
 }
 
 .about__text {
     color: white;
+}
+
+.services {
+    background-color: $color_section3;
+}
+
+.services__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column-reverse;
+}
+
+.services__content {
+    padding: 20px 0;
+    // flex-grow: 2;
+    flex-basis: 400px;
+}
+
+.services__element {
+    margin: 20px 0;
+    flex-basis: 400px;
+    width: 400px;
+}
+
+.services__img {
+    // position: relative;
+    background-image: url('../img/img_tomato.png');
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-size: contain;
+    // border: 1px solid red;
+}
+
+.services__title {
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // transform: translate(-50% -50%);
+    margin: 150px 0;
+    text-align: center;
+}
+
+.services__button {
+    // max-width: 400px;
+    height: 100px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+.button__name {
+    font-size: 20px;
+    color: $color_text_dark;
+    text-align: center;
+    font-weight: 600;
+    // justify-self: center;
+    flex-grow: 2;
+}
+
+.button__icon {
+    width: 100px;
+    height: 100px;
+    border-left: 1px solid $color_text_dark;
+}
+
+.icon {
+    width: 50px;
+    height: 50px;
+    margin: 24px;
+
 }
 
 @include respond-to ('small') {
@@ -392,6 +468,16 @@ h2 {
     .about__title {
         // color: white;
         font-size: 60px;
+    }
+
+    .services__container {
+       
+        flex-direction: row;
+    }
+
+    .services__content {
+        padding: 180px 0;
+        flex-basis: 400px;
     }
 
 
