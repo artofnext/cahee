@@ -327,6 +327,7 @@ h2 {
     // transform: translate(-50% -50%);
     margin: 150px 0;
     text-align: center;
+    font-weight: 600;
 }
 
 .services__button {
@@ -359,6 +360,66 @@ h2 {
     height: 50px;
     margin: 24px;
 
+}
+
+.gallery {
+    background-color: $color_section4;
+    background-size: cover;
+}
+
+.gallery__block {
+    text-align: center;
+}
+
+.gallery__title, .gallery__text {
+    text-align: center;
+}
+
+.gallery__title {
+    font-size: 90px;
+    padding-top: 100px;
+    font-weight: 600;
+}
+
+.gallery__text {
+    max-width: 600px;
+    margin: 30px auto;
+}
+
+.gallery__grid, .gallery__col {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+
+.gallery__row {
+    display: flex;
+    justify-content: space-around;
+    // flex-wrap: wrap;
+}
+
+.gallery__img {
+    margin: 10px;
+}
+
+.gallery__img img {
+    max-width: 100%;
+    // margin: 10px;
+    
+}
+
+.button__container {
+    // box-sizing: border-box;
+    padding-bottom: 1px;
+}
+
+.gallery__button {
+    display: block;
+    margin: 35px auto 100px auto;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: $color_button_blue;
 }
 
 @include respond-to ('small') {
