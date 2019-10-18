@@ -93,7 +93,7 @@ h2 {
 .logo__text {
     font-family: pacifico;
     font-size: 50px;
-    margin: 0;
+    margin: 5px;
 }
 
 .burger__img, .close__img {
@@ -224,7 +224,7 @@ h2 {
     line-height: 1.5;
 }
 
-.fresh__text {
+.fresh__text, .subscribe__text {
     text-shadow: white 1px 0 5px,
     white 1px 0 5px,
     white 1px 0 5px;
@@ -377,21 +377,21 @@ h2 {
     background-size: cover;
 }
 
-.gallery__block {
+.gallery__block, .blog__block {
     text-align: center;
 }
 
-.gallery__title, .gallery__text {
+.gallery__title, .gallery__text, .blog__text {
     text-align: center;
 }
 
-.gallery__title {
+.gallery__title, .blog__title {
     font-size: 90px;
     padding-top: 100px;
     font-weight: 600;
 }
 
-.gallery__text {
+.gallery__text, .blog__text {
     max-width: 600px;
     margin: 30px auto;
 }
@@ -424,7 +424,7 @@ h2 {
     padding-bottom: 1px;
 }
 
-.gallery__button {
+.gallery__button, .blog__button {
     display: block;
     margin: 35px auto 100px auto;
     margin-left: auto;
@@ -436,7 +436,23 @@ h2 {
     background-image: url('../img/bg_subscribe.png');
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-x: center;
+    background-blend-mode: lighten;
+    position: relative;
+    // opacity: .5;
     height: 500px;
+
+    // &:after {
+    //     content: "";
+    //     display: block;
+    //     width: 100%;
+    //     height: 100%;
+    //     position: absolute;
+    //     top: 0;
+    //     left: 0;
+    //     background-color: white;
+    //     opacity: .5;
+    // }
 }
 
 .subscribe__container {
@@ -465,14 +481,120 @@ h2 {
     // display: block;
     width: 100%;
     height: 48px;
+    padding-left: 15px;
     margin-right: 30px;
     margin-bottom: 10px;
     box-sizing: border-box;
+    background-color: #ffffff99;
+    border: 1px solid black;
 }
 
 .subscribe__button {
     background-color: $color_button_green;
 }
+
+.blog__button{
+    background-color: $color_button_red;
+}
+
+.blog {
+    background-color: $color_section6;
+    background-size: cover;
+    color: white;
+}
+
+.blog__content {
+    display: flex;
+    justify-content: space-between;
+
+    align-content: center;
+    flex-direction: column;
+    max-width: 370px;
+    margin: 20px auto;
+}
+
+.blog__item {
+    position: relative;
+    flex-basis: 32%;
+    box-shadow: 3px 3px 5px #00000077;
+}
+
+.post {
+    margin-bottom: 20px;
+}
+
+.post__img {
+    // background: 
+    //     linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,0)),
+    //     url('../img/img_blog1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 300px;
+
+}
+
+#post__img1 {
+    background: 
+        linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,0)),
+        url('../img/img_blog1.png');
+}
+
+#post__img2 {
+    background: 
+        linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,0)),
+        url('../img/img_blog2.png');
+}
+
+#post__img3 {
+    background: 
+        linear-gradient(to top, rgba(0,0,0,1), rgba(0,0,0,0), rgba(0,0,0,0)),
+        url('../img/img_blog3.png');
+}
+
+.post__content {
+    position: absolute;
+    margin: 20px;
+    width: 90%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.post__date {
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
+    background-color: #00000055;
+    margin: 20px;
+
+    p {
+        font-size: 32px;
+        font-weight: 600;
+        padding: 2px 0;
+        margin: 0;
+        line-height: .9;
+        text-align: center;
+
+        &:last-child {
+            font-size: 22px;
+            font-weight: 700;
+        }
+    }
+}
+
+.post__text {
+    margin-top: 100px;
+}
+
+.post__title {
+    font-size: 20px;
+}
+
+.post__info {
+    font-size: 13px;
+}
+
 
 @include respond-to ('small') {
 
@@ -608,6 +730,13 @@ h2 {
         width: 400px;
         height: 48px;
         margin-right: 30px;
+    }
+
+    .blog__content {
+        align-content: center;
+        flex-direction: row;
+        max-width: unset;
+        margin: 0 auto;
     }
 
 }
