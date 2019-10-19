@@ -10,7 +10,7 @@ let cleanCSS = require('gulp-clean-css');
 function compile() {
     return gulp.src("./css/*.scss")
         .pipe(sourcemaps.init())
-        .pipe(sass({outputStyle: 'compressed'}))
+        .pipe(sass(/*{outputStyle: 'compressed'}*/))
         .pipe(sourcemaps.write())
         .pipe(gulp.dest((file) => {
             return file.base;
