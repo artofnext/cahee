@@ -385,13 +385,13 @@ h2 {
     text-align: center;
 }
 
-.gallery__title, .blog__title {
+.gallery__title, .blog__title, .contact__title {
     font-size: 90px;
     padding-top: 100px;
     font-weight: 600;
 }
 
-.gallery__text, .blog__text {
+.gallery__text, .blog__text, .contact__text {
     max-width: 600px;
     margin: 30px auto;
 }
@@ -422,6 +422,8 @@ h2 {
 .button__container {
     // box-sizing: border-box;
     padding-bottom: 1px;
+    display: flex;
+    justify-content: center;
 }
 
 .gallery__button, .blog__button {
@@ -479,10 +481,10 @@ h2 {
 
 .subscribe__input {
     // display: block;
-    width: 100%;
+    width: 80%;
     height: 48px;
     padding-left: 15px;
-    margin-right: 30px;
+    // margin-right: 30px;
     margin-bottom: 10px;
     box-sizing: border-box;
     background-color: #ffffff99;
@@ -595,6 +597,118 @@ h2 {
     font-size: 13px;
 }
 
+.contact {
+    background-image: url('../img/img_contact.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.contact__header {
+    text-align: center;
+}
+
+.contact__title {
+    // margin: 0 auto;
+}
+
+.contact__text {
+    max-width: 350px;
+}
+
+.contact__form {
+    max-width: 500px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contact__info {
+    display: none;
+
+    & p:first-child {
+        margin-top: 0;
+    }
+
+    & p:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.contact__wrapper {
+    max-width: 325px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.contact__block {
+    flex-direction: column;
+}
+
+.form__item {
+    width: 100%;
+    max-width: 500px;
+    height: 50px;
+    color: white;
+    margin: 7px 0;
+    box-sizing: border-box;
+    background-color: $color_form_field;
+    padding: 5px 10px;
+    border: none;
+    border-left: 5px solid transparent;
+    opacity: .5;
+
+    &::placeholder {
+        color: white;
+    }
+
+    &:active, &:hover, &:focus {
+        opacity: 1;
+    }
+
+    &:focus {
+        border-left: 5px solid $color_form_active;
+    }
+
+    &[name="message"] {
+        height: 250px;
+        margin-bottom: 20px;
+    }
+}
+
+.form__button {
+    background-color: $color_form_field;
+    margin-bottom: 50px;
+}
+
+.footer {
+    height: 90px;
+    background-color: $color_footer;
+    color: $color_footer_text;
+}
+
+.footer__container {
+    display: flex;
+    justify-content: center;
+    padding-top: 35px;
+    // height: inherit;
+
+    div {
+        vertical-align: middle;
+    }
+}
+
+.footer__logo {
+    font-family: pacifico;
+    font-size: 25px;
+}
+
+.made, .copyright {
+    display: none;
+}
 
 @include respond-to ('small') {
 
@@ -745,6 +859,23 @@ h2 {
         margin: 0 auto;
     }
 
+    .contact__block {
+        flex-direction: row;
+    }
+
+    .contact__info {
+        flex-grow: 2;
+        display: initial;
+    }
+
+    .footer__container {
+        // display: flex;
+        justify-content: space-between;
+    }
+    
+    .made, .copyright {
+        display: initial;
+    }
 }
 
 @include respond-to ('large') {
