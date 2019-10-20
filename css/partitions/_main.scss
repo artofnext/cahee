@@ -710,6 +710,11 @@ h2 {
     display: none;
 }
 
+.love-red {
+    color: $color_love_red;
+    font-weight: 600;
+}
+
 @include respond-to ('small') {
 
     .fresh {
