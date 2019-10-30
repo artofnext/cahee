@@ -3,6 +3,7 @@ let gulp = require('gulp');
 let sass = require('gulp-sass');
 let minify = require('gulp-minify');
 let sourcemaps = require('gulp-sourcemaps');
+let autoprefixer = require('gulp-autoprefixer');
 
 let cleanCSS = require('gulp-clean-css');
 
@@ -16,6 +17,16 @@ function compile() {
             return file.base;
         }));
 };
+
+function autoPrefix() {
+    return gulp.src("./css/*.css")
+    .pipe(autoprefixer({
+        cascade: false
+    }))
+    .pipe(gulp.dest((file) => {
+        return file.base;
+    }));
+}
 
 function minifyCSS() {
     // Folder with files to minify
@@ -47,6 +58,7 @@ exports.compile = compile;
 exports.watch = watch;
 exports.minifyCSS = minifyCSS;
 exports.minifyJS = minifyJS;
+exports.prefix = autoPrefix;
 exports.build = parallel(minifyJS, series(compile, minifyCSS));
 
 
